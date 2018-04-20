@@ -22,7 +22,7 @@ int* twoSum(int* nums, int numsSize, int target)
                 if((nums[j] == target-nums[i]))
                 {       
                     * indices = i;
-                    * (indices+1) =j-1;
+                    * (indices+1) =j;
                     flag = 1;
                     break;  
                 }       
