@@ -17,14 +17,19 @@ int* twoSum(int* nums, int numsSize, int target)
     	if (nums[i] != target)
     	{
     		j=i+1;
-    		while((nums[j] == target-nums[i])&&(j++<numsSize-1))
-    		{
-    			* indices = i;
-    			* (indices+1) =j-1;
-                        flag = 1;
-                        break;
-    		}
+            while(j<numsSize)
+            {       
+                if((nums[j] == target-nums[i]))
+                {       
+                    * indices = i;
+                    * (indices+1) =j-1;
+                    flag = 1;
+                    break;  
+                }       
+                j++;    
+            }    
     	}
+
         if (flag == 1)
             break;
     }
@@ -34,8 +39,8 @@ int* twoSum(int* nums, int numsSize, int target)
 
 void main(void)
 {
-    int nums[] = {2, 7, 11, 15};
-    int target = 9;
+    int nums[] = {2, 7, 11, 15, 18, 70};
+    int target = 77;
     int numsSize = sizeof(nums)/sizeof(int);
     
     int *p = NULL;
