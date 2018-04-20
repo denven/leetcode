@@ -12,23 +12,20 @@ int* twoSum(int* nums, int numsSize, int target)
     	return NULL;
     }
 
-    for (i = 0; i < numsSize; i++)
+    for (; i < numsSize; i++)
     {
-    	if (nums[i] != target)
-    	{
-    		j=i+1;
-            while(j<numsSize)
+		j = i+1;
+        while(j<numsSize)
+        {       
+            if((nums[j] == target-nums[i]))
             {       
-                if((nums[j] == target-nums[i]))
-                {       
-                    * indices = i;
-                    * (indices+1) =j;
-                    flag = 1;
-                    break;  
-                }       
-                j++;    
-            }    
-    	}
+                * indices = i;
+                * (indices+1) =j;
+                flag = 1;
+                break;  
+            }       
+            j++;    
+        }    
 
         if (flag == 1)
             break;
